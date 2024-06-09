@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: steam-proxy
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: STEAM_API_KEY
+        sync: false
+      - key: PORT
+        value: "3001"
